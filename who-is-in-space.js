@@ -13,10 +13,14 @@ async function loadpeopleinspace() {
             try {
                 const nasaRes = await fetch(`https://images-api.nasa.gov/search?q=${person.name}&media_type=image`);
                 const nasaData = await nasaRes.json();
-                if (nasaData.collection.items.length > 0) {
+                if (nasaData.collection.items.length > 0 && nasaData.collection.items[0].links && nasaData.collection.items[0].links[0].href) {
                     imagesrc = nasaData.collection.items[0].links[0].href;
+                } else {
+                    imagesrc = 'astronaut.png';
                 }
-            } catch {}
+            } catch {
+                imagesrc = 'astronaut.png';
+            }
             card.innerHTML = `
                 <div class="card-image-wrapper">
                     <img src="${imagesrc}" alt="${person.name}" class="card-image">
