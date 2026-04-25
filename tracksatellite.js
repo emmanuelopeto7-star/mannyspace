@@ -39,6 +39,6 @@ document.getElementById("searchBtn").addEventListener("click",()=>
     }
 });
 setInterval(()=>
-    loadsatellite(currentId),10000
+    loadsatellite(currentId),30000
 );
 loadsatellite(currentId);
