@@ -16,5 +16,6 @@ The creation of Mannyspace.com involved a wide variety of technologies such as:
 - css
 - vs code
 - canva
+- javascript
 
 ##
